@@ -1,0 +1,59 @@
+<ul class="nav justify-content-center" style="margin-top: 200px;">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink='/admin-trainers'>Trainers</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink='/admin-courses'>Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink='/admin-users'>Users</a>
+  </li>
+ 
+</ul>
+<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"  >
+       
+  <table class="table" >
+    <thead>
+      <tr>
+        
+        <th scope="col">img</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">specility</th>
+        <th scope="col">experience</th>
+        <th scope="col">Tel</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor='let t of trainers'>
+      <tr>
+       
+        <td><img [src]=t.img ></td>
+        <td [ngClass]="{
+          green:nameColor(t.name)[0]=='2',
+          brown:nameColor(t.name)[0]=='1',
+          gris:nameColor(t.name)[0]=='0'
+        
+        }">{{t._id}}</td>
+        <td [ngStyle]="{
+          'color':nameColor(t.name)[1]
+        }">{{t.name}}</td>
+
+  <td>{{t. specilaty}}</td>
+  <td>{{t.experience}}</td>
+  <td>{{t.tel}}</td>
+<td>
+  <button class="btn btn-info" (click)='goTodisplay(t._id)'>display</button>
+  <button class="btn btn-warning" (click)='goToEdit(t._id)'>edit</button>
+  <button class="btn btn-danger" (click)='deleteTrainer(t._id)'>delete</button>
+
+</td>
+      </tr>
+    
+    </tbody>
+  </table>
+   
+    
+    
+</div>

@@ -1,0 +1,42 @@
+<div class="events" style="margin-top: 200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">All courses</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row events_row">
+
+            <!-- Event -->
+            <div class="col-lg-4 event_col" *ngFor='let c of coursess'>
+                <div class="event event_left">
+                    <div class="event_image"><img [src]=c.img alt=""></div>
+                    <div class="event_body d-flex flex-row align-items-start justify-content-start">
+                        <div class="event_date">
+                            <div class="d-flex flex-column align-items-center justify-content-center trans_200">
+                                <div class="event_day trans_200" style="font-size: 14px; color: brown;margin-bottom: 15px;">Debut des cours</div>
+                                <div class="event_day trans_200" >{{c.date}}</div>
+                                <div class="event_month trans_200">{{c.mois}}</div>
+                            </div>
+                        </div>
+                        <div class="event_content">
+                            <div class="event_title"><a href="#">{{c.name}}</a></div>
+                            <div class="event_info_container">
+                                <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>{{c.time}}</span></div>
+                                <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>{{c.place}}</span></div>
+                               
+                                <button class="btn btn-info">consulter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+        </div>
+    </div>
+</div>
+

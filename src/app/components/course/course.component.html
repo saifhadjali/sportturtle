@@ -1,0 +1,31 @@
+<div class="course">
+    <div class="course_image"><img src="assets/images/course_1.jpg" alt=""></div>
+    <div class="course_body">
+        <h3 class="course_title"><a href="course.html"></a>{{courseInput.name}}</h3>
+        <div [ngStyle]="{
+            'color':priceColor(courseInput.price)[1]
+        }">{{courseInput.trainer}}</div>
+        <div class="course_text">
+            <p>{{courseInput.description  }}</p>
+        </div>
+    </div>
+    <div class="course_footer">
+        <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+            <div class="course_info">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <span>{{courseInput.capacity}} {{plural(courseInput.capacity)}}</span>
+            </div>
+            <div class="course_info">
+            
+                <span>{{courseInput.date | date:'dd-MM/yyyy'}}</span>
+            </div>
+            <div [ngClass]="{
+                red:priceColor(courseInput.price)[0]=='2',
+                green:priceColor(courseInput.price)[0]=='0',
+                orange:priceColor(courseInput.price)[0]=='1'
+                
+            }">{{courseInput.price}} TND</div>
+        </div>
+    </div>
+    <div style="text-align: center;margin-top: 30px;"><button class="btn btn-info " (click)='goToDisplay(courseInput._id)'>display</button></div>
+</div>

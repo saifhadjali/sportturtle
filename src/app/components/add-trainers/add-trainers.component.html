@@ -1,0 +1,41 @@
+<div class="contact_info_container" style="margin-top: 200px;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Contact Form -->
+            <div class="col-lg-12">
+                <div class="contact_form">
+                    <div class="contact_info_title">Add Trainer</div>
+                    <form action="#" class="comment_form" #trainerForm='ngForm' (ngSubmit)='addTrainer()'>
+                        <div>
+                            <div class="form_title">name</div>
+                            <input type="text" class="comment_input" [(ngModel)]='trainer.name' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">specilaty</div>
+                            <input type="text" class="comment_input" [(ngModel)]='trainer.specilaty' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">experience</div>
+                            <input type="text" class="comment_input" [(ngModel)]='trainer.experience' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">Tel</div>
+                            <input type="number" class="comment_input" [(ngModel)]='trainer.tel' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                       
+                       
+                        <div>
+                            <button type="submit" class="comment_button trans_200">Add trainer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+          
+        </div>
+    </div>
+</div>
+
+

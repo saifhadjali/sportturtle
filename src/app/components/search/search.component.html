@@ -1,0 +1,39 @@
+<div class="contact_info_container" style="margin-top: 200px;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Contact Form -->
+            <div class="col-lg-12">
+                <div class="contact_form">
+                    <div class="contact_info_title">search</div>
+                    <form action="#" class="comment_form" #searchForm='ngForm' (ngSubmit)='search()'>
+                        <div>
+                            <div class="form_title">trainer name</div>
+                            <input type="text" class="comment_input" [(ngModel)]='trainer.name' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                       
+                       
+                        <div>
+                            <button type="submit" class="comment_button trans_200">search</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row courses_row" style="margin-top: 30px;">
+                    <!-- Course -->
+                    <div class="col-lg-4 course_col" *ngFor='let c of findedCourses'>
+                        <app-course [courseInput]="c">
+                            
+                        </app-course>
+                    </div>
+                
+                </div>
+            </div>
+           
+
+            <!-- Contact Info -->
+           
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,42 @@
+<app-tabs></app-tabs>
+<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"  >
+       
+  <table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">id</th>
+        <th scope="col">img</th>
+
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Trainer</th>
+        <th scope="col">Description</th>
+        <th scope="col">Capacity</th>
+        <th scope="col">Date</th>
+        <th scope="col">actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor='let c of courses'>
+      <tr>
+       
+        <td>{{c._id}}</td>
+        <td><img [src]=c.img width="160px" height="140px" ></td>
+        <td>{{c.name}}</td>
+        <td>{{c.price}}</td>
+        <td>{{c.trainer}}</td>
+        <td>{{c.description}}</td>
+        <td>{{c.capacity}}</td>
+        <td>{{c.date | date:'dd-MM/yyyy'}}</td>
+        <td><button class="btn btn-info" (click)='goTodisplay(c._id)'>display</button>
+          <button class="btn btn-warning" (click)='goToEdit(c._id)'>edit</button>
+          <button class="btn btn-danger" (click)='deleteCourse(c._id)'>delete</button>
+        </td>
+      </tr>
+   
+    </tbody>
+  </table>
+   
+    
+    
+</div>

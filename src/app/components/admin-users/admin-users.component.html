@@ -1,0 +1,47 @@
+<ul class="nav justify-content-center" style="margin-top: 200px;">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink='/admin-trainers'>Trainers</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink='/admin-courses'>Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink='/admin-users'>Users</a>
+  </li>
+ 
+</ul>
+<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+       
+  <table class="table" >
+    <thead>
+      <tr>
+       
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor='let u of users'>
+      <tr>
+       
+        <td>{{u.firstname}}</td>
+        <td>{{u.lastname}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.tel}}</td>
+        <td>
+          <button class="btn btn-info" (click)='goTodisplay(u.id)'>display</button>
+          <button class="btn btn-warning" (click)='goToEdit(u.id)'>edit</button>
+          <button class="btn btn-danger">delete</button>
+
+
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+   
+    
+    
+</div>
